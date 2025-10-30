@@ -1,0 +1,5 @@
+{
+  "name": "CRYPTO MALLV2",
+  "description": "A full-stack crypto trading and marketplace application with a design theme inspired by Binance. It includes a landing page, user profile and wallet, global crypto market data, a marketplace, and an admin panel.",
+  "requestFramePermissions": []
+}

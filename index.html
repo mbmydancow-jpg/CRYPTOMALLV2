@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crypto Trade & Marketplace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['IBM Plex Mono', 'monospace'],
+          },
+          colors: {
+            'background': '#0B0E11',
+            'panel': '#181A20',
+            'accent': '#FCD535',
+            'positive': '#0ECB81',
+            'negative': '#F6465D',
+            'text-primary': '#EAECEF',
+            'text-secondary': '#848E9C',
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    /* New Grid Background */
+    .grid-background {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      background-color: #0B0E11; /* background */
+      background-image: 
+        linear-gradient(rgba(24, 26, 32, 0.4) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(24, 26, 32, 0.4) 1px, transparent 1px);
+      background-size: 40px 40px;
+      z-index: -1;
+    }
+
+    /* Price Flash Animation */
+    @keyframes flash-green {
+      0% { background-color: rgba(14, 203, 129, 0.3); } /* positive color with 30% opacity */
+      100% { background-color: transparent; }
+    }
+    @keyframes flash-red {
+      0% { background-color: rgba(246, 70, 93, 0.3); } /* negative color with 30% opacity */
+      100% { background-color: transparent; }
+    }
+    .flash-up {
+      animation: flash-green 0.4s ease-out;
+    }
+    .flash-down {
+      animation: flash-red 0.4s ease-out;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.27.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.3.0",
+    "@heroicons/react/": "https://aistudiocdn.com/@heroicons/react@^2.2.0/"
+  }
+}
+</script>
+</head>
+<body class="bg-background text-text-primary font-sans">
+  <div class="grid-background"></div>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
